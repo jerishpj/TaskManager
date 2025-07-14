@@ -15,9 +15,8 @@ export class App {
   users = DUMMY_USERS
   selectedUserId = '';
 
-  get selectedUserName() {
-    const user = this.users.find(user => user.id === this.selectedUserId);
-    return user ? user.name : '';
+  get selectedUser() {
+    return this.users.find(user => user.id === this.selectedUserId);
   }
 
   onUserSelect(id: string) {
