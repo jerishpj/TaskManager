@@ -25,13 +25,6 @@ export class Tasks {
     return this.taskService.getUserTasks(this.userId);
   }
 
-  onTaskComplete(taskId: number) {
-    // Logic to handle task completion can be added here
-    this.taskService.removeTask(taskId);
-
-    console.log(`TasksComponent: Removed completed task: ${taskId}`);
-  }
-
   onStartAddTask() {
     // Logic to handle adding a new task can be added here
     console.log('TasksComponent: Start adding a new task');

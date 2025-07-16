@@ -15,7 +15,7 @@ export class Task {
   @Output() complete = new EventEmitter<number>();
   private taskService = inject(TasksService);
 
-  onCompleteClick() {
+  onCompleteTask() {
     // Logic to handle task completion can be added here
     console.log(`TaskComponent: Completed button clicked for task: ${this.userTask.title}`);
     
