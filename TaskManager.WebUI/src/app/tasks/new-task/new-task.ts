@@ -35,12 +35,13 @@ export class NewTask {
       title: taskData.title,
       summary: taskData.summary,
       dueDate: taskData.dueDate,
-      id: this.taskService.getUserTasks(this.userId).length + 1,
+      id: this.taskService.getMaxTaskId() + 1,
       userId: this.userId,
-      date: new Date().toLocaleDateString(),
+      date: new Date().toLocaleDateString('en-CA'),
       completed: false,
       description: ''
     }); 
+
     this.close.emit();
   }
 }

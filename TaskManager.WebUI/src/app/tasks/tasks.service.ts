@@ -15,6 +15,10 @@ export class TasksService {
         return this.tasks.filter(task => task.userId === userId);
     }
 
+    getMaxTaskId(): number {
+        return this.tasks.length > 0 ? Math.max(...this.tasks.map(task => task.id || 0)) : 0;
+    }
+
     addTask(newTask: UserTask): void {
         //this.tasks.push(newTask);
         this.tasks.unshift(newTask); // Add new task to the beginning of the list
@@ -25,5 +29,15 @@ export class TasksService {
     removeTask(taskId: number): void {
         this.tasks = this.tasks.filter(task => task.id !== taskId);
         console.log(`TasksService: Removed task with ID ${taskId}`);
+    }
+
+    completeTask(taskId: number): void {
+        const task = this.tasks.find(t => t.id === taskId);
+        if (task) {
+            task.completed = true;
+            console.log(`TasksService: Marked task with ID ${taskId} as completed`);
+        } else {
+            console.error(`TasksService: Task with ID ${taskId} not found`);
+        }
     }
 }

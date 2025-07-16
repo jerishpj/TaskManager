@@ -40,7 +40,7 @@ export class Tasks {
 
   onCloseAddTask() {
     // Logic to handle canceling task addition can be added here
-    console.log('TasksComponent: Cancel adding a new task');
+    console.log('TasksComponent: Closing a new task window');
     this.isAddingTask = false;
   }
 }
