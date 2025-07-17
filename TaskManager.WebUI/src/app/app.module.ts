@@ -1,18 +1,15 @@
 import { NgModule } from "@angular/core";
 import { App } from "./app";
 import { Header } from "./header/header";
-import { Tasks } from "./tasks/tasks";
 import { User } from "./user/user";
-import { Card } from "./shared/card/card";
 import { BrowserModule } from "@angular/platform-browser";
-import { NewTask } from "./tasks/new-task/new-task";
-import { Task } from "./tasks/task/task";
-import { FormsModule } from "@angular/forms";
+import { SharedModule } from "./shared/shared.module";
+import { TasksModule } from "./tasks/tasks.module";
 
 @NgModule({
-  declarations: [App, Header, User, Card, Tasks, Task, NewTask],
+  declarations: [App, Header, User],
   bootstrap: [App],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, SharedModule, TasksModule],
 })
 export class AppModule {
   // This is the root module of the application.
